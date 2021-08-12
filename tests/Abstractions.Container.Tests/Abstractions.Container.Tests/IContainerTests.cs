@@ -7,7 +7,6 @@ namespace Abstractions.Container.Tests
     using System.Collections.Generic;
     using System.Linq;
     using Microsoft.Azure.Cosmos;
-    using Microsoft.Azure.Cosmos.Abstractions.Container;
     using Xunit.Abstractions;
 
     public class IContainerTests
