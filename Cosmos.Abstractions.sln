@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9FB31E0A-EFEC-4FC8-9127-7016ECBFC242}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.Cosmos.Abstractions.Container", "src\Microsoft.Azure.Cosmos.Abstractions.Container\Microsoft.Azure.Cosmos.Abstractions.Container.csproj", "{2D4C65E2-9650-4771-A702-FB60D30BEB71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Abstractions.Container", "src\Cosmos.Abstractions.Container\Cosmos.Abstractions.Container.csproj", "{2D4C65E2-9650-4771-A702-FB60D30BEB71}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5E931492-72CF-4A79-BA49-27C09481485B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abstractions.Container.Tests", "tests\Abstractions.Container.Tests\Abstractions.Container.Tests\Abstractions.Container.Tests.csproj", "{EED27A92-6C6D-4FBB-8115-BDBDAF1559B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Abstractions.Container.Tests", "tests\Cosmos.Abstractions.Container.Tests\Cosmos.Abstractions.Container.Tests.csproj", "{EED27A92-6C6D-4FBB-8115-BDBDAF1559B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

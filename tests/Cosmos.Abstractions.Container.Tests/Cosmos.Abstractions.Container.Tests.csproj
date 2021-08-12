@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Microsoft.Azure.Cosmos.Abstractions.Container\Microsoft.Azure.Cosmos.Abstractions.Container.csproj" />
+    <ProjectReference Include="..\..\src\Cosmos.Abstractions.Container\Cosmos.Abstractions.Container.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,6 +15,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageId>Cosmos.Abstractions.Container</PackageId>
+    <Product>Cosmos.Abstractions.Container</Product>
   </PropertyGroup>
 
   <ItemGroup>

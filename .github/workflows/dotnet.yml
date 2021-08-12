@@ -26,4 +26,4 @@ jobs:
     - name: Pack
       run: dotnet pack --no-build --configuration Release --verbosity normal
     - name: Publish
-      run: dotnet nuget push src/Microsoft.Azure.Cosmos.Abstractions.Container/bin/Release/Microsoft.Azure.Cosmos.Abstractions.Container.*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push src/Cosmos.Abstractions.Container/bin/Release/Cosmos.Abstractions.Container.*.nupkg --api-key ${{ secrets.NUGET_KEY }} --source https://api.nuget.org/v3/index.json
