@@ -5,11 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace Microsoft.Azure.Cosmos.Abstractions.Container
+namespace Microsoft.Azure.Cosmos
 {
-    using Microsoft.Azure.Cosmos;
-    using Microsoft.Azure.Cosmos.Scripts;
-
     public interface IContainer<T>
     {
         /// <inheritdoc cref="Container.Conflicts"/>
@@ -22,7 +19,7 @@ namespace Microsoft.Azure.Cosmos.Abstractions.Container
         string Id { get; }
 
         /// <inheritdoc cref="Container.Scripts"/>
-        Scripts Scripts { get; }
+        Scripts.Scripts Scripts { get; }
 
         /// <inheritdoc cref="Container.CreateItemAsync"/>
         Task<ItemResponse<T>> CreateItemAsync(T item, PartitionKey? partitionKey = null, ItemRequestOptions? requestOptions = null, CancellationToken cancellationToken = default);
