@@ -25,3 +25,13 @@ jobs:
       run: dotnet test --no-build --configuration Release --verbosity normal
     - name: publish
       run: dotnet publish --no-build --configuration Release --verbosity normal
+    - name: Setup NuGet.exe for use with actions
+      uses: NuGet/setup-nuget@v1.0.5
+      with:
+        # NuGet API Key to configure.
+        nuget-api-key: ${{ secrets.NUGET_KEY }}
+    - name: Publish NuGet package
+      uses: dansiegel/publish-nuget@v1.01
+      with:
+        # NuGet package filename or search pattern
+        filename: src/Microsoft.Azure.Cosmos.Abstractions.Container/bin/Release/Microsoft.Azure.Cosmos.Abstractions.Container.*.nupkg
