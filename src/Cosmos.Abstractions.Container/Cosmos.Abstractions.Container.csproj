@@ -5,9 +5,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
-    <Version>0.1</Version>
+    <Version>1.0.0</Version>
     <Authors>Eddie Sundvall Säther</Authors>
-    <Description>Adds an interface and a generically typed wrapper around Microsoft.Azure.Cosmos.Container, to allow for dependency injecting a container.</Description>
+    <Description>Adds an interface IContainer&lt;T&gt; and a generically typed wrapper around Microsoft.Azure.Cosmos.Container, to allow for dependency injecting multiple containers.</Description>
     <PackageProjectUrl>https://github.com/eddiemon/CosmosContainer</PackageProjectUrl>
     <PackageTags>azure cosmos interface abstract container</PackageTags>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
