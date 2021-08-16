@@ -1,11 +1,12 @@
 using System.Reflection;
 using Xunit;
 
-namespace Abstractions.Container.Tests
+namespace Cosmos.Abstractions.Container.Tests
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Cosmos.Abstractions.Container;
     using Microsoft.Azure.Cosmos;
     using Xunit.Abstractions;
 
@@ -50,9 +51,9 @@ namespace Abstractions.Container.Tests
             if (a.Count() != b.Count())
                 return false;
 
-            for (int i = 0; i < a.Count(); i++)
+            for (var i = 0; i < a.Count(); i++)
             {
-                if ((a[i].ParameterType != b[i].ParameterType && a[i].ParameterType.IsGenericType != b[i].ParameterType.IsGenericType) ||
+                if (a[i].ParameterType != b[i].ParameterType && a[i].ParameterType.IsGenericType != b[i].ParameterType.IsGenericType ||
                     a[i].Name != b[i].Name)
                     return false;
             }
