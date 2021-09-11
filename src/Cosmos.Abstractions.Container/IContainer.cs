@@ -9,6 +9,7 @@ namespace Cosmos.Abstractions.Container
 {
     using Microsoft.Azure.Cosmos;
     using Microsoft.Azure.Cosmos.Scripts;
+    using static Microsoft.Azure.Cosmos.Container;
 
     public interface IContainer<T>
     {
@@ -125,5 +126,14 @@ namespace Cosmos.Abstractions.Container
 
         /// <inheritdoc cref="Container.UpsertItemStreamAsync"/>
         Task<ResponseMessage> UpsertItemStreamAsync(Stream streamPayload, PartitionKey partitionKey, ItemRequestOptions? requestOptions = null, CancellationToken cancellationToken = default);
+
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilderWithManualCheckpoint{T}(string, ChangeFeedHandlerWithManualCheckpoint{T})"/>
+        public abstract ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, ChangeFeedHandlerWithManualCheckpoint<T> onChangesDelegate);
+
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilder"/>
+        public abstract ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilder(string processorName, ChangeFeedStreamHandler onChangesDelegate);
+
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilderWithManualCheckpoint"/>
+        public abstract ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, ChangeFeedStreamHandlerWithManualCheckpoint onChangesDelegate);
     }
 }

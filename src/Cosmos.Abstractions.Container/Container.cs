@@ -62,8 +62,17 @@ namespace Cosmos.Abstractions.Container
         /// <inheritdoc cref="Container.GetChangeFeedIterator"/>
         public FeedIterator<T> GetChangeFeedIterator(ChangeFeedStartFrom changeFeedStartFrom, ChangeFeedMode changeFeedMode, ChangeFeedRequestOptions? changeFeedRequestOptions = null) => _container.GetChangeFeedIterator<T>(changeFeedStartFrom, changeFeedMode, changeFeedRequestOptions);
 
-        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilder"/>
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilder{T}"/>
         public ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilder(string processorName, Container.ChangesHandler<T> onChangesDelegate) => _container.GetChangeFeedProcessorBuilder(processorName, onChangesDelegate);
+
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilder"/>
+        public ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilder(string processorName, Container.ChangeFeedStreamHandler onChangesDelegate) => _container.GetChangeFeedProcessorBuilder(processorName, onChangesDelegate);
+
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilderWithManualCheckpoint{T}"/>
+        public ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, Container.ChangeFeedHandlerWithManualCheckpoint<T> onChangesDelegate) => _container.GetChangeFeedProcessorBuilderWithManualCheckpoint(processorName, onChangesDelegate);
+
+        /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilderWithManualCheckpoint"/>
+        public ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, Container.ChangeFeedStreamHandlerWithManualCheckpoint onChangesDelegate) => _container.GetChangeFeedProcessorBuilderWithManualCheckpoint(processorName, onChangesDelegate);
 
         /// <inheritdoc cref="Container.GetChangeFeedStreamIterator"/>
         public FeedIterator GetChangeFeedStreamIterator(ChangeFeedStartFrom changeFeedStartFrom, ChangeFeedMode changeFeedMode, ChangeFeedRequestOptions? changeFeedRequestOptions = null) => _container.GetChangeFeedStreamIterator(changeFeedStartFrom, changeFeedMode, changeFeedRequestOptions);
