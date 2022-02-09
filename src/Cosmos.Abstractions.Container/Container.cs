@@ -95,6 +95,12 @@ namespace Cosmos.Abstractions.Container
         /// <inheritdoc cref="Container.GetItemQueryStreamIterator"/>
         public FeedIterator GetItemQueryStreamIterator(string? queryText = null, string? continuationToken = null, QueryRequestOptions? requestOptions = null) => _container.GetItemQueryStreamIterator(queryText, continuationToken, requestOptions);
 
+        /// <inheritdoc cref="Container.PatchItemAsync"/>
+        public Task<ItemResponse<T>> PatchItemAsync(string id, PartitionKey partitionKey, IReadOnlyList<PatchOperation> patchOperations, PatchItemRequestOptions requestOptions = null, CancellationToken cancellationToken = default) => _container.PatchItemAsync<T>(id, partitionKey, patchOperations, requestOptions, cancellationToken);
+
+        /// <inheritdoc cref="Container.PatchItemStreamAsync"/>
+        public Task<ResponseMessage> PatchItemStreamAsync(string id, PartitionKey partitionKey, IReadOnlyList<PatchOperation> patchOperations, PatchItemRequestOptions requestOptions = null, CancellationToken cancellationToken = default) => _container.PatchItemStreamAsync(id, partitionKey, patchOperations, requestOptions, cancellationToken);
+
         /// <inheritdoc cref="Container.ReadContainerAsync"/>
         public Task<ContainerResponse> ReadContainerAsync(ContainerRequestOptions? requestOptions = null, CancellationToken cancellationToken = default) => _container.ReadContainerAsync(requestOptions, cancellationToken);
 

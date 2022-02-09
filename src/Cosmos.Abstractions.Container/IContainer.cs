@@ -128,12 +128,18 @@ namespace Cosmos.Abstractions.Container
         Task<ResponseMessage> UpsertItemStreamAsync(Stream streamPayload, PartitionKey partitionKey, ItemRequestOptions? requestOptions = null, CancellationToken cancellationToken = default);
 
         /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilderWithManualCheckpoint{T}(string, ChangeFeedHandlerWithManualCheckpoint{T})"/>
-        public abstract ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, ChangeFeedHandlerWithManualCheckpoint<T> onChangesDelegate);
+        ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, ChangeFeedHandlerWithManualCheckpoint<T> onChangesDelegate);
 
         /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilder"/>
-        public abstract ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilder(string processorName, ChangeFeedStreamHandler onChangesDelegate);
+        ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilder(string processorName, ChangeFeedStreamHandler onChangesDelegate);
 
         /// <inheritdoc cref="Container.GetChangeFeedProcessorBuilderWithManualCheckpoint"/>
-        public abstract ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, ChangeFeedStreamHandlerWithManualCheckpoint onChangesDelegate);
+        ChangeFeedProcessorBuilder GetChangeFeedProcessorBuilderWithManualCheckpoint(string processorName, ChangeFeedStreamHandlerWithManualCheckpoint onChangesDelegate);
+
+        /// <inheritdoc cref="Container.PatchItemAsync"/>
+        Task<ItemResponse<T>> PatchItemAsync(string id, PartitionKey partitionKey, IReadOnlyList<PatchOperation> patchOperations, PatchItemRequestOptions requestOptions = null, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <inheritdoc cref="Container.PatchItemStreamAsync"/>
+        Task<ResponseMessage> PatchItemStreamAsync(string id, PartitionKey partitionKey, IReadOnlyList<PatchOperation> patchOperations, PatchItemRequestOptions requestOptions = null, CancellationToken cancellationToken = default(CancellationToken));
     }
 }
