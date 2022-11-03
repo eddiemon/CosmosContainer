@@ -30,7 +30,13 @@ namespace Cosmos.Abstractions.Container.Tests
             {
                 try
                 {
-                    interfacePublicMethods.Single(m => m.Name == method.Name && ParameterTypesMatch(m.GetParameters(), method.GetParameters()));
+                    var matches = interfacePublicMethods.Where(m => m.Name == method.Name && ParameterTypesMatch(m.GetParameters(), method.GetParameters()));
+                    if (method.IsGenericMethod)
+                        matches = matches.Where(m => !m.IsGenericMethod);
+
+                    var allMatches = matches.ToList();
+                    if (allMatches.Count() != 1)
+                        throw new InvalidOperationException();
                 }
                 catch (InvalidOperationException)
                 {
